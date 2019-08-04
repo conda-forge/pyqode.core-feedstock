@@ -1,5 +1,5 @@
 {% set name = "pyqode.core" %}
-{% set version = "2.12.0" %}
+{% set version = "2.12.1" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9f69498c8f35d6e751ccf5625de6390b442d5ec147557ebab3d2d8e560ba37d7
+  sha256: 776bdb3c0fb6b5de73b24ffaf36466499b96eede5a042be23c3ad09169f30b68
 
 build:
   number: 0
