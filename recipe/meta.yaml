@@ -12,25 +12,20 @@ source:
 build:
   number: 0
   noarch: python
-  preserve_egg_dir: true
   entry_points:
     - pyqode-console = pyqode.core.tools.console:main
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
-    - future
     - pip
-    - pygments
-    - pyqode.qt
-    - python
-    - setuptools
+    - python >=3.7
   run:
     - future
     - pygments
-    - pyqode.qt
-    - python
-    - setuptools
+    - python >=3.7
+    - qtpy
+    - qtawesome 
 
 test:
   imports:
@@ -59,8 +54,8 @@ about:
   license_file: LICENSE
   license_family: MIT
   summary: PyQt/PySide Source Code Editor Widget
-  doc_url: https://github.com/pyQode/pyQode/wiki
-  dev_url: https://github.com/pyQode/pyQode
+  doc_url: https://github.com/open-cogsci/pyqode.core
+  dev_url: https://github.com/open-cogsci/pyqode.core
 
 extra:
   recipe-maintainers:
