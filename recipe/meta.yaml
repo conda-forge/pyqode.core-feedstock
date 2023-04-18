@@ -1,21 +1,21 @@
 {% set name = "pyqode.core" %}
-{% set version = "2.12.1" %}
+{% set version = "4.0.10" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 776bdb3c0fb6b5de73b24ffaf36466499b96eede5a042be23c3ad09169f30b68
+  sha256: fdfe2216924fb7903688d1ea3e2bfeefd2a3877028c21bf40758319306e9d413
 
 build:
   number: 0
   noarch: python
-  preserve_egg_dir: True
+  preserve_egg_dir: true
   entry_points:
     - pyqode-console = pyqode.core.tools.console:main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
 
 requirements:
   host:
@@ -56,6 +56,7 @@ test:
 about:
   home: https://github.com/pyQode/pyqode.core
   license: MIT
+  license_file: LICENSE
   license_family: MIT
   summary: PyQt/PySide Source Code Editor Widget
   doc_url: https://github.com/pyQode/pyQode/wiki
