@@ -1,5 +1,5 @@
 cdt_name:
-- cos6
+- conda
 channel_sources:
 - conda-forge
 channel_targets:
@@ -10,5 +10,9 @@ pin_run_as_build:
   python:
     min_pin: x.x
     max_pin: x.x
+pyqt:
+- '5.15'
 python:
-- 3.10.* *_cpython
+- 3.12.* *_cpython
+python_min:
+- '3.9'
