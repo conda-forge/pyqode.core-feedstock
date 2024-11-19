@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pyqode-core-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyqode-core-{{ version }}.tar.gz
   sha256: 93bf7909a36e64a9e4e017ad43c8e82bb1112e9583d5591bd50c7e1699b88b85
 
 build:
@@ -14,18 +14,18 @@ build:
   noarch: python
   entry_points:
     - pyqode-console = pyqode.core.tools.console:main
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv '
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv'
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - flit-core
   run:
     - future
     - pathspec
     - pygments
-    - python >=3.7
+    - python >={{ python_min }}
     - qtpy
     - qtawesome
 
@@ -48,6 +48,7 @@ test:
     - echo input > input.txt
     - pyqode-console < input.txt
   requires:
+    - python {{ python_min }}
     - pyqt
 
 about:
